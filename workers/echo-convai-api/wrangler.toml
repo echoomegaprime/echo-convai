@@ -1,0 +1,20 @@
+name = "echo-convai-api"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "echo-convai"
+database_id = "6da5a226-9269-4e34-9ca2-c44db6cdea24"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "echo-convai-storage"
+
+[vars]
+ENVIRONMENT = "production"
+GATEWAY_URL = "https://echo-convai-gateway.bmcii1976.workers.dev"

@@ -1,0 +1,57 @@
+{
+  "name": "@echo-prime/convai-client",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for Echo ConvAI — ElevenLabs-compatible conversational AI client",
+  "author": "Echo Prime Technologies",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./audio": {
+      "import": "./dist/audio.js",
+      "types": "./dist/audio.d.ts"
+    },
+    "./api": {
+      "import": "./dist/api.js",
+      "types": "./dist/api.d.ts"
+    },
+    "./types": {
+      "import": "./dist/types.js",
+      "types": "./dist/types.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "convai",
+    "conversational-ai",
+    "websocket",
+    "voice",
+    "tts",
+    "stt",
+    "elevenlabs",
+    "echo-prime",
+    "real-time"
+  ],
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "echo-convai-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ElevenLabs-compatible WebSocket gateway for Echo ConvAI with Durable Objects",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "cf-typegen": "wrangler types"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241205.0",
+    "typescript": "^5.7.0",
+    "wrangler": "^3.99.0"
+  }
+}

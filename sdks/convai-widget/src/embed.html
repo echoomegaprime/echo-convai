@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Echo ConvAI Widget — Embed Example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0F172A;
+      color: #F1F5F9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 640px;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    p {
+      color: #94A3B8;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .code-block {
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+      font-family: "Fira Code", "Cascadia Code", "JetBrains Mono", monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-x: auto;
+      margin-bottom: 32px;
+    }
+    .code-block .comment { color: #64748B; }
+    .code-block .tag { color: #7DD3FC; }
+    .code-block .attr { color: #A78BFA; }
+    .code-block .string { color: #34D399; }
+    .code-block .prop { color: #FDE68A; }
+    .divider {
+      width: 80px;
+      height: 2px;
+      background: #334155;
+      margin: 32px auto;
+    }
+    .badge {
+      display: inline-block;
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: #94A3B8;
+      margin: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Echo ConvAI Widget</h1>
+    <p>Embeddable conversational AI for any website. Drop in two lines of code and you have a fully functional voice + text AI assistant.</p>
+
+    <div>
+      <span class="badge">Voice + Text</span>
+      <span class="badge">Shadow DOM</span>
+      <span class="badge">Zero Dependencies</span>
+      <span class="badge">3 Variants</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="text-align:left; margin-bottom: 12px;">Method 1: Script Tag (Programmatic)</h3>
+    <div class="code-block">
+      <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="string">"https://cdn.echo-ept.com/convai-widget.js"</span><span class="tag">&gt;&lt;/script&gt;</span><br/>
+      <span class="tag">&lt;script&gt;</span><br/>
+      &nbsp;&nbsp;EchoConvAI.init({<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="prop">agentId</span>: <span class="string">'your-agent-id'</span>,<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="prop">serverUrl</span>: <span class="string">'wss://echo-convai.echo-op.com'</span>,<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="prop">variant</span>: <span class="string">'expandable'</span>,  <span class="comment">// 'compact' | 'full' | 'expandable'</span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="prop">title</span>: <span class="string">'Echo AI'</span>,<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="prop">greeting</span>: <span class="string">'Hello! How can I help?'</span>,<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="prop">styles</span>: { <span class="prop">primaryColor</span>: <span class="string">'#6366F1'</span> },<br/>
+      &nbsp;&nbsp;});<br/>
+      <span class="tag">&lt;/script&gt;</span>
+    </div>
+
+    <h3 style="text-align:left; margin-bottom: 12px;">Method 2: Data Attributes</h3>
+    <div class="code-block">
+      <span class="tag">&lt;script</span><br/>
+      &nbsp;&nbsp;<span class="attr">src</span>=<span class="string">"https://cdn.echo-ept.com/convai-widget.js"</span><br/>
+      &nbsp;&nbsp;<span class="attr">data-echo-agent-id</span>=<span class="string">"your-agent-id"</span><br/>
+      &nbsp;&nbsp;<span class="attr">data-echo-variant</span>=<span class="string">"expandable"</span><br/>
+      &nbsp;&nbsp;<span class="attr">data-echo-title</span>=<span class="string">"AI Assistant"</span><br/>
+      <span class="tag">&gt;&lt;/script&gt;</span>
+    </div>
+
+    <h3 style="text-align:left; margin-bottom: 12px;">Method 3: npm Package</h3>
+    <div class="code-block">
+      <span class="comment">// npm install @echo-prime/convai-widget</span><br/><br/>
+      <span class="tag">import</span> { init } <span class="tag">from</span> <span class="string">'@echo-prime/convai-widget'</span>;<br/><br/>
+      <span class="tag">const</span> widget = init({<br/>
+      &nbsp;&nbsp;<span class="prop">agentId</span>: <span class="string">'your-agent-id'</span>,<br/>
+      &nbsp;&nbsp;<span class="prop">variant</span>: <span class="string">'full'</span>,<br/>
+      });<br/><br/>
+      <span class="comment">// Programmatic control</span><br/>
+      widget.sendText(<span class="string">'Hello!'</span>);<br/>
+      widget.disconnect();<br/>
+      widget.unmount();
+    </div>
+
+    <p style="font-size: 13px; margin-top: 40px;">
+      Powered by <a href="https://echo-ept.com" style="color: #818CF8;">Echo Prime Technologies</a>
+    </p>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- LIVE DEMO: This loads the widget on this page                  -->
+  <!-- Replace 'demo-agent' with a real agent ID to see it in action  -->
+  <!-- ============================================================= -->
+  <script src="https://cdn.echo-ept.com/convai-widget.js"></script>
+  <script>
+    EchoConvAI.init({
+      agentId: 'demo-agent',
+      serverUrl: 'wss://echo-convai.echo-op.com',
+      variant: 'expandable',
+      title: 'Echo AI',
+      greeting: 'Hello! I\'m an Echo AI assistant. How can I help you today?',
+      styles: {
+        primaryColor: '#6366F1',
+      },
+    });
+  </script>
+
+</body>
+</html>

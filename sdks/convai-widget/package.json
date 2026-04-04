@@ -1,0 +1,37 @@
+{
+  "name": "@echo-prime/convai-widget",
+  "version": "1.0.0",
+  "description": "Embeddable conversational AI widget for any website — zero dependencies",
+  "main": "dist/convai-widget.js",
+  "module": "dist/convai-widget.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format iife,esm --global-name EchoConvAI --clean --minify",
+    "dev": "tsup src/index.ts --format iife --global-name EchoConvAI --watch",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "echo",
+    "convai",
+    "conversational-ai",
+    "widget",
+    "embeddable",
+    "voice",
+    "chat"
+  ],
+  "author": "Echo Prime Technologies",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobmcwilliams4/echo-convai"
+  }
+}

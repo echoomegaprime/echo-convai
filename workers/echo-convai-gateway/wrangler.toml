@@ -1,0 +1,22 @@
+name = "echo-convai-gateway"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+
+[durable_objects]
+bindings = [
+  { name = "CONVERSATION_SESSION", class_name = "ConversationSession" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["ConversationSession"]
+
+[vars]
+ENVIRONMENT = "production"
+API_URL = "https://echo-convai-api.bmcii1976.workers.dev"
+MAX_CONVERSATION_DURATION_SECS = "3600"
+PING_INTERVAL_SECS = "25"
